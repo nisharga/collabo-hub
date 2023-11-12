@@ -25,18 +25,11 @@ const Sidebar = () => {
             bottom: 0,
           }}
         >
-           <div
-         style={{
-          color: "white",
-          fontSize: "22px",
-          textAlign: "center",
-          fontWeight: "bold",
-          marginBottom: "1rem",
-          marginTop: "2rem",
-        }}
-      >
-        DashBoard
-          </div>
+          
+
+        <h2 className="text-center lg:text-1xl text-[#fff] font-bold mt-5">{USER_ROLE.ADMIN}</h2>
+        <h2 className="text-center lg:text-2xl text-[#fff] font-bold mb-5">DashBoard</h2> 
+
         <Menu theme="dark" 
           defaultSelectedKeys={['1']} 
           mode="inline" 
