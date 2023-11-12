@@ -28,17 +28,19 @@ const Sidebar = () => {
            <div
          style={{
           color: "white",
-          fontSize: "2rem",
+          fontSize: "22px",
           textAlign: "center",
           fontWeight: "bold",
           marginBottom: "1rem",
+          marginTop: "2rem",
         }}
       >
-        Dashboard
+        DashBoard
           </div>
         <Menu theme="dark" 
           defaultSelectedKeys={['1']} 
           mode="inline" 
+          style={{ "padding": "10px" }}
           items={SidebarItems(role)}
         />
       </Sider>

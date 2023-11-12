@@ -31,7 +31,7 @@ export const SidebarItems = (role : string) => {
           key: `/${role}/service-management`,
         },
         {
-          label: <Link href={`/${role}/booking management`}>Booking Management</Link>,
+          label: <Link href={`/${role}/booking-management`}>Booking Management</Link>,
           icon: <DatabaseOutlined />,
           key: `/${role}/booking-management`,
         },{
