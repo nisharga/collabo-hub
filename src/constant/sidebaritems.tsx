@@ -1,15 +1,14 @@
 import { 
-    ScheduleOutlined,
-    AppstoreOutlined,
+     
     TableOutlined,
-    ProfileOutlined,
-    ThunderboltOutlined,
-    CreditCardOutlined,
-    FileTextOutlined,
     UserAddOutlined,
     DatabaseOutlined,
     FileExcelOutlined,
-    SolutionOutlined
+    SolutionOutlined,
+    CarryOutOutlined,
+    FundOutlined,
+    ReconciliationOutlined,
+    UserOutlined
   } from '@ant-design/icons';
   import type { MenuProps } from 'antd';
 import Link from 'next/link';
@@ -47,74 +46,33 @@ export const SidebarItems = (role : string) => {
     
       const UserSidebarItems: MenuProps["items"] = [
         {
-          label: "Manage academic",
-          key: "manage-academic",
-          icon: <TableOutlined />,
+          label: "Profile  ",
+          key: "profile ",
+          icon: <UserOutlined />,
           children: [
             {
-              label: <Link href={`/${role}/academic/faculty`}>Faculties</Link>,
-              key: `/${role}/academic/faculty`,
+              label: <Link href={`/${role}/profile-summary`}>User Profile Summary</Link>,
+              key: `/${role}/profile-summary`,
             },
             {
-              label: <Link href={`/${role}/academic/department`}>Departments</Link>,
-              key: `/${role}/academic/department`,
-            },
-            {
-              label: <Link href={`/${role}/academic/semester`}>Semesters</Link>,
-              key: `/${role}/academic/semester`,
-            },
+              label: <Link href={`/${role}/edit-profile`}>Edit Profile</Link>,
+              key: `/${role}/edit-profile`,
+            } 
           ],
+        }, 
+        {
+          label: <Link href={`/${role}/activites-overview`}>Activities Overview</Link>,
+          key: `/${role}/activites-overview`,
+          icon: <CarryOutOutlined />
         },
         {
-          label: "Management",
-          key: "management",
-          icon: <AppstoreOutlined />,
-          children: [
-            {
-              label: <Link href={`/${role}/department`}>Department</Link>,
-              key: `/${role}/department`,
-            },
-            {
-              label: <Link href={`/${role}/building`}>Building</Link>,
-              key: `/${role}/building`,
-            },
-            {
-              label: <Link href={`/${role}/room`}>Rooms</Link>,
-              key: `/${role}/room`,
-            },
-            {
-              label: <Link href={`/${role}/course`}>Course</Link>,
-              key: `/${role}/course`,
-            },
-            {
-              label: (
-                <Link href={`/${role}/semester-registration`}>
-                  Semester registration
-                </Link>
-              ),
-              key: `/${role}/semester-registration`,
-            },
-            {
-              label: <Link href={`/${role}/offered-course`}>Offered courses</Link>,
-              key: `/${role}/offered-course`,
-            },
-            {
-              label: (
-                <Link href={`/${role}/offered-course-section`}>
-                  Course sections
-                </Link>
-              ),
-              key: `/${role}/offered-course-section`,
-            },
-            {
-              label: (
-                <Link href={`/${role}/offered-course-schedule`}>
-                  Course schedules
-                </Link>
-              ),
-              key: `/${role}/offered-course-schedule`,
-            },
-          ],
+          label: <Link href={`/${role}/booking-history`}>Booking History</Link>,
+          key: `/${role}/booking-history`,
+          icon: <FundOutlined />
+        }, {
+          label: <Link href={`/${role}/current-booking-status`}>Current Booking Status</Link>,
+          key: `/${role}/current-booking-status`,
+          icon: <ReconciliationOutlined />
         },
       ]; 
 
