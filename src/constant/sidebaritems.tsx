@@ -5,7 +5,11 @@ import {
     ProfileOutlined,
     ThunderboltOutlined,
     CreditCardOutlined,
-    FileTextOutlined
+    FileTextOutlined,
+    UserAddOutlined,
+    DatabaseOutlined,
+    FileExcelOutlined,
+    SolutionOutlined
   } from '@ant-design/icons';
   import type { MenuProps } from 'antd';
 import Link from 'next/link';
@@ -17,14 +21,27 @@ export const SidebarItems = (role : string) => {
 
     const AdminSidebarItems: MenuProps["items"] = [
         {
-          label: <Link href={`/${role}/manage-student`}>Manage Students</Link>,
-          icon: <TableOutlined />,
-          key: `/${role}/manage-student`,
+          label: <Link href={`/${role}/user-management`}>User Management</Link>,
+          icon: <UserAddOutlined />,
+          key: `/${role}/user-management,`,
         },
         {
-          label: <Link href={`/${role}/manage-faculty`}>Manage Faculty</Link>,
+          label: <Link href={`/${role}/service-management`}>Service Management</Link>,
           icon: <TableOutlined />,
-          key: `/${role}/manage-faculty`,
+          key: `/${role}/service-management`,
+        },
+        {
+          label: <Link href={`/${role}/booking management`}>Booking Management</Link>,
+          icon: <DatabaseOutlined />,
+          key: `/${role}/booking-management`,
+        },{
+          label: <Link href={`/${role}/content-management`}>Content Management</Link>,
+          icon: <FileExcelOutlined />,
+          key: `/${role}/content-management`,
+        },{
+          label: <Link href={`/${role}/profile-management`}>Profile Management</Link>,
+          icon: <SolutionOutlined />,
+          key: `/${role}/profile-management`,
         },
       ];
     
