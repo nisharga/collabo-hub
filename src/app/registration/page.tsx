@@ -4,12 +4,15 @@ import { SubmitHandler } from "react-hook-form";
 import { Button } from "antd";
 import FormInput from './../../components/form/frominput';
 import Footer from "@/components/shared/footer";
-import { useState } from 'react';
-
- 
-
+import { useState, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from "@/redux/hooks/hooks";
+import { createUser } from "@/redux/feature/userSlice/userSlice";
+import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type FormValues = {
+    email: string;
     id: string;
     password: string;
 };
@@ -17,10 +20,29 @@ type FormValues = {
 
 const Registration = () => {
     const [image, setImage] = useState(); 
+    const [isLoading, setIsLoading] = useState(false) 
+    const {user} = useAppSelector((state) => state.user)
+    const router = useRouter();
+
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        if(user?.email ){
+            router.push('/');
+            toast.success("Register Sucessfully")
+        }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [user])
+
+
     const onsubmit: SubmitHandler<FormValues> = (data) => {
         try{
-            console.log(data)
-            
+            console.log(data.email, data.password)
+            setIsLoading(true);
+            dispatch(createUser({email: data?.email, password: data.password}));
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 3000);
         }catch(err){}
     }
 
@@ -39,6 +61,7 @@ const Registration = () => {
         
       });
   };
+  console.log(user);
    return (
         <div>
             <h2>Register</h2>
@@ -80,6 +103,7 @@ const Registration = () => {
                     </Button>
            </Form>
                 <Footer/>
+                <ToastContainer/>
         </div>
     );
 };
