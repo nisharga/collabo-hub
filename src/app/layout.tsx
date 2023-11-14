@@ -3,6 +3,9 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Providers from '@/lib/Provider'
 import Dropd from './../components/shared/dropd';
+import Collabofooter from '@/components/shared/collabofooter';
+import Footer from '@/components/shared/footer';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +26,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Dropd/>
         {children}
+        <Footer/>
         </body>
+        {/* <Collabofooter/> */}
     </html>
     </Providers>
   )

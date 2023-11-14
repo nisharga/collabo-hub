@@ -28,7 +28,7 @@ export default function Home() {
     <main className="">
       <CarouselHome/>
       <RecentCollabo/>
-      <CollaborationFAQ/>
+         <CollaborationFAQ/>    
       <Testimonial/>
       <ContactUs/>
       <Cta/>  

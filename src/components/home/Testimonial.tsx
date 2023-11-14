@@ -1,3 +1,4 @@
+ 
 import React from 'react';
 import {Swiper,SwiperSlide} from 'swiper/react';
 import 'swiper/css'; 
@@ -33,16 +34,11 @@ function Testimonial() {
           disableOnInteraction: false,
         }}
         modules={[Navigation, Pagination, A11y]} navigation={{nextEl:".swiper-button-next",prevEl:".swiper-button-prev",}} pagination={{el:".swiper-pagination",dynamicBullets:true,clickable: true }} centeredSlides={true} slidesPerView={3} spaceBetween={30} loop={true} grabCursor={true} breakpoints={{0:{slidesPerView:1,},520:{slidesPerView:2,}, 950:{slidesPerView:3,},}}>
-           {/* <SwiperSlide><Card/></SwiperSlide>
-           <SwiperSlide><Card/></SwiperSlide> */}
            
-           
-          {
-            data?.data?.map((testimonial: Itestimonial) => <SwiperSlide key={testimonial._id}><Card testimonial={testimonial}/></SwiperSlide>)
+            {
+            isLoading ? <Skeleton /> : !isLoading && data?.data?.map((testimonial: Itestimonial) => <SwiperSlide key={testimonial._id}><Card testimonial={testimonial}/></SwiperSlide>)
           }
-          {
-            isLoading && <Skeleton />
-          }
+  
         </Swiper>
 
       </div>
