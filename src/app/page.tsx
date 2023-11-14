@@ -1,5 +1,9 @@
 "use client"
 import CarouselHome from "@/components/home/Carousel";
+import CollaborationFAQ from "@/components/home/CollaborationFAQ";
+import ContactUs from "@/components/home/ContactUs";
+import Cta from "@/components/home/Cta";
+import RecentCollabo from "@/components/home/RecentCollabo";
 import auth from "@/redux/feature/userSlice/firebase";
 import { setLoading, setUser } from "@/redux/feature/userSlice/userSlice";
 import { useAppDispatch } from "@/redux/hooks/hooks";
@@ -22,24 +26,11 @@ export default function Home() {
   return (
     <main className="">
       <CarouselHome/>
-
-       <h2>This is main page</h2>
-       
-       <div className="bg-red-500 text-[#fff] p-4">
-          <Button type="default">Add</Button>
-          {/* <Carousel>
-              <div>
-              1
-              </div>
-              <div><h3>2</h3></div>
-              <div><h3>3</h3></div>
-              <div><h3>4</h3></div>
-          </Carousel>
-           */}
-       </div>
-
-       
-
+      <RecentCollabo/>
+      <CollaborationFAQ/>
+      
+      <ContactUs/>
+      <Cta/>  
     </main>
   )
 }

@@ -36,7 +36,7 @@ const Notification = () => {
   return (
     <>
       {contextHolder}
-      <Button type="primary" onClick={openNotification}>
+      <Button onClick={openNotification}>
       <BellOutlined />
       </Button>
     </>

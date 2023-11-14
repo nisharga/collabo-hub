@@ -9,6 +9,7 @@ import { SubmitHandler } from "react-hook-form";
 import {useEffect} from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dropd from './../../components/shared/dropd';
 
 type FormValues = {
   [x: string]: string;
@@ -59,6 +60,9 @@ const Login = () => {
                     </Button>
            </Form>
            <ToastContainer/>
+
+      <Dropd/>
+
            </div>
   )
 }
