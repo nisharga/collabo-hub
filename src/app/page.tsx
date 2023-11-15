@@ -11,8 +11,7 @@ import { setLoading, setUser } from "@/redux/feature/userSlice/userSlice";
 import { useAppDispatch } from "@/redux/hooks/hooks";
  
 import { onAuthStateChanged } from "firebase/auth";
-import { useEffect } from "react";
- 
+import { useEffect } from "react"; 
  
 export default function Home() {
   const dispatch = useAppDispatch()
@@ -30,11 +29,10 @@ export default function Home() {
         <CarouselHome/> 
         <NextCollabo/>
         <CollaborationFAQ/> 
-        <RecentCollabo />
-           
+        <RecentCollabo /> 
         <Testimonial/>
         <ContactUs/>
-        <Cta/>   
+        <Cta/>    
     </main>
   )
 }

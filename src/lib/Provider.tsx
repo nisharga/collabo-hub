@@ -2,7 +2,7 @@
 
 import store from "@/redux/store";
 import StyledComponentsRegistry from "./Registry";
-import { Provider } from "react-redux"; 
+import { Provider } from "react-redux";  
 
 const Providers = ({children} : { children: React.ReactNode }) => {
     return (
@@ -10,6 +10,7 @@ const Providers = ({children} : { children: React.ReactNode }) => {
         <StyledComponentsRegistry> 
             {children}  
         </StyledComponentsRegistry>
+        
         </Provider>
     )
 }
