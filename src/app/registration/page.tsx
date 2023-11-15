@@ -75,13 +75,7 @@ const Registration = () => {
             
             <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white mt-3 pl-6 lg:mb-5">Register Now Today!!</h1>
             <Form submitHandler={onsubmit}>
-     {/* <div>
-       <FormInput name="name"
-                type="text"
-                size="large"
-                label="Username"
-         />
-    </div> */}
+     
     <div className="py-3">
        <FormInput name="email"
                 type="email"
@@ -96,15 +90,7 @@ const Registration = () => {
                 label="Password"
          />
     </div>
-            {/* <div>
-                <input  
-                className="w-[100%] p-2"
-                placeholder="image add" 
-                type="file"
-                onChange={onChange}  
-                id="file-upload"
-                />
-            </div> */}
+            
 
  
             <Button type="primary" htmlType="submit">
