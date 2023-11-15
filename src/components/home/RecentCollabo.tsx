@@ -10,7 +10,7 @@ const RecentCollabo = () => {
         <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
              
             <div className="lg:flex">
-                <Image className="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1547&q=80" alt="colalbo"
+                <Image className="object-cover w-full h-56 rounded-lg lg:w-64 mb-3" src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1547&q=80" alt="colalbo"
                 width={500}
                 height={500}
                 />
@@ -27,7 +27,7 @@ const RecentCollabo = () => {
             </div>
 
             <div className="lg:flex">
-                <Image className="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1484&q=80" alt="img" width={500}
+                <Image className="object-cover w-full h-56 rounded-lg lg:w-64 mb-3" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1484&q=80" alt="img" width={500}
       height={500} />
 
 <div className="flex flex-col justify-between lg:mx-6">
