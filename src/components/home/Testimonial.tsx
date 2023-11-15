@@ -4,11 +4,14 @@ import {Swiper,SwiperSlide} from 'swiper/react';
 import 'swiper/css'; 
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/scrollbar'; 
+
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import Card from './Card';
 import { useGetAllTestimonialsQuery } from '@/redux/feature/apiSlice/apiSlice';
-import { Skeleton } from 'antd';
+import { Skeleton } from 'antd'; 
+
+ 
 
 type Itestimonial = {
     _id: string,
@@ -18,7 +21,7 @@ type Itestimonial = {
     feedback: string
 }
 
-function Testimonial() {
+function Testimonial() { 
     const { data, isLoading, error } = useGetAllTestimonialsQuery()
     console.log(data);
   return (
@@ -29,11 +32,10 @@ function Testimonial() {
     <div className='slide-container swiper py-10'>
       <div className="slide-content">
       <div className="card-wrapper swiper-wrapper">
-        <Swiper autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Navigation, Pagination, A11y]} navigation={{nextEl:".swiper-button-next",prevEl:".swiper-button-prev",}} pagination={{el:".swiper-pagination",dynamicBullets:true,clickable: true }} centeredSlides={true} slidesPerView={3} spaceBetween={30} loop={true} grabCursor={true} breakpoints={{0:{slidesPerView:1,},520:{slidesPerView:2,}, 950:{slidesPerView:3,},}}>
+        <Swiper 
+        
+         
+        modules={[Navigation, Pagination, A11y  ]} navigation={{nextEl:".swiper-button-next",prevEl:".swiper-button-prev",}} pagination={{el:".swiper-pagination",dynamicBullets:true,clickable: true }} centeredSlides={true} slidesPerView={3} spaceBetween={30} loop={true} grabCursor={true} breakpoints={{0:{slidesPerView:1,},520:{slidesPerView:2,}, 950:{slidesPerView:3,},}}>
            
             {
             isLoading ? <Skeleton /> : !isLoading && data?.data?.map((testimonial: Itestimonial) => <SwiperSlide key={testimonial._id}><Card testimonial={testimonial}/></SwiperSlide>)

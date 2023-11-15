@@ -4,41 +4,42 @@ import FormInput from '@/components/form/frominput';
 import { Button } from 'antd';
 import { SubmitHandler } from 'react-hook-form';
 import { useState } from 'react';
-import { SmileOutlined } from '@ant-design/icons';
 import { Rate } from 'antd';
 import FormTextArea from '@/components/form/formtextarea';
+import FeedBackImg from "../../../public/feedback.png"; 
+import Image from 'next/image';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from "next/navigation";
+import { useCreateTestimonialMutation } from '@/redux/feature/apiSlice/apiSlice';
+
 type FormValues = {
     id: string;
-    password: string;
-};
-import { notification } from 'antd';
-import Notification from '@/components/dashboard/ui/Notification';
+    username: string;
+    email: string;
+    feedback: string;
+}; 
 const FeedBack = () => {
-    const [rating, setRating] = useState<number>(0);
-
-    //after form submit notify
-    const [api, contextHolder] = notification.useNotification();
-    const openNotification = () => {
-        api.open({
-          message: 'Notification Title',
-          description:
-            'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-          icon: <SmileOutlined style={{ color: '#108ee9' }} />,
-        });
-      };
-
+    const [rating, setRating] = useState<number>(0); 
+    const [addFeedback ] = useCreateTestimonialMutation()
+    const router = useRouter();
       const onsubmit: SubmitHandler<FormValues> = (data) => {
         try{
-            console.log(data, rating)
-            openNotification()
+            const feedbackData = {...data, rating}
+            addFeedback(feedbackData)
+            toast.success("Successfully Added!")
+            router.push('/');
             
         }catch(err){}
     }
     return (
-        <div>
-           <h2>Feed Back</h2>  
+        <div className="grid grid-cols-12 gap-4">
+           
+            <div className="lg:col-span-6 col-span-12 p-4">
+            <div className="mx-6">
+            <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white mt-3 pl-6 lg:mb-5">Give Us a FeedBack!!</h1> 
            <Form submitHandler={onsubmit}>
-           <div className="">
+           <div className='py-3'>
                         <FormInput
                             name="username"
                             type="text"
@@ -46,32 +47,38 @@ const FeedBack = () => {
                             label="User Name"
                         />
                     </div>
-     <div>
+     <div className='py-3'>
        <FormInput name="email"
                 type="email"
                 size="large"
                 label="Email"
          />
     </div>
-    <div>
+    <div className='py-3'>
+    <h2 className="mb-2">Rate (out of 5)</h2>
     <Rate allowHalf 
     allowClear={true} defaultValue={rating} onChange={(value) => {setRating(value) }}/>
     </div>
-    <div>
-       <FormTextArea name="suggestions"
-                rows={4} placeholder="suggestions"
+    <div className='py-3'>
+       <FormTextArea name="feedback"
+                rows={4} placeholder="feedback"
                 size="large"
-                label="Suggestions"
+                label="feedback"
          />
     </div> 
-    {/* notification                    */}
-    {contextHolder}
-    <Notification/>
+     
     <Button type="primary" htmlType="submit">
-                        Login
+                        Submit
                     </Button>
                 </Form>
+                
+        </div>
+            </div>
 
+            <div className="lg:col-span-6 col-span-12 p-4">
+            <Image src={FeedBackImg} alt="FeedBackImg" />
+            <ToastContainer/> 
+            </div>
         </div>
     );
 };
