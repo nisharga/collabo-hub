@@ -110,47 +110,12 @@ const Dropd = () => {
                 <div
                   className={`${
                     isOpen ? "block" : "hidden"
-                  } origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`}
+                  } origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10`}
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="options-menu"
                 >
                   <div className="py-1" role="none">
-                    <Link
-                      href="/category/ram"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-900"
-                      role="menuitem"
-                    >
-                      Ram
-                    </Link>
-                    <Link
-                      href="/category/cpu"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-900"
-                      role="menuitem"
-                    >
-                      Cpu
-                    </Link>
-                    <Link
-                      href="/category/motherboard"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-900"
-                      role="menuitem"
-                    >
-                      Motherboard
-                    </Link>
-                    <Link
-                      href="/category/power-supply-unit"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-900"
-                      role="menuitem"
-                    >
-                      Power Supply
-                    </Link>
-                    <Link
-                      href="/category/storage"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-900"
-                      role="menuitem"
-                    >
-                      Storage
-                    </Link>
                     <Link
                       href="/category/monitor"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-100 hover:text-indigo-900"

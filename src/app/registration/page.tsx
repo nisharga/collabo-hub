@@ -10,6 +10,8 @@ import { createUser } from "@/redux/feature/userSlice/userSlice";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Image from "next/image";
+import registerImg from "../../../public/signup.png";
 
 type FormValues = {
     email: string;
@@ -63,48 +65,58 @@ const Registration = () => {
   };
   console.log(user);
    return (
-        <div>
-            <h2>Register</h2>
+<div className="grid grid-cols-12 gap-4">
+    <div className="lg:col-span-6 col-span-12 p-4">
+        <Image src={registerImg} alt="registerImg" />
+    </div>
+    <div className="lg:col-span-6 col-span-12 p-4">
+
+    <div className="lg:mt-20">
+            
+            <h1 className="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white mt-3 pl-6 lg:mb-5">Register Now Today!!</h1>
             <Form submitHandler={onsubmit}>
-     <div>
+     {/* <div>
        <FormInput name="name"
                 type="text"
                 size="large"
                 label="Username"
          />
-    </div>
-    <div>
+    </div> */}
+    <div className="py-3">
        <FormInput name="email"
                 type="email"
                 size="large"
                 label="Email"
          />
     </div>
-    <div>
+    <div className="py-3">
        <FormInput name="password"
                 type="password"
                 size="large"
                 label="Password"
          />
     </div>
-                            <div >
-                                <input  
-                                className="w-[100%] p-2"
-                               placeholder="image add" 
-                               type="file"
-                               onChange={onChange}  
-                               id="file-upload"
-                               />
-                           </div>
+            {/* <div>
+                <input  
+                className="w-[100%] p-2"
+                placeholder="image add" 
+                type="file"
+                onChange={onChange}  
+                id="file-upload"
+                />
+            </div> */}
 
  
             <Button type="primary" htmlType="submit">
                         Register
                     </Button>
-           </Form>
-                <Footer/>
-                <ToastContainer/>
+    </Form>
+        <ToastContainer/>
         </div>
+
+        
+    </div>
+</div>
     );
 };
 
