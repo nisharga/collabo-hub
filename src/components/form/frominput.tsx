@@ -3,6 +3,7 @@
 
 import { Input } from "antd";
 import { useFormContext, Controller } from "react-hook-form";
+import { getErrorMessageByPropertyName } from "./validation/schemaValidation";
 interface IInput {
   name: string;
   type?: string;
@@ -25,9 +26,8 @@ const FormInput = ({
   validation,
   label,
 }: IInput) => {
-  const { control } = useFormContext();
-
-
+  const { control, formState: { errors } } = useFormContext(); 
+  const errorMessage = getErrorMessageByPropertyName(errors, name);
   return (
     <>
       {label ? label : null}
@@ -52,8 +52,9 @@ const FormInput = ({
               value={value ? value : field.value}
             />
           )
-        }
+        } 
       />
+      <small style={{ color: "red" }}>{errorMessage}</small> 
     </>
   );
 };
